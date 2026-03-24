@@ -1,0 +1,128 @@
+/* Background animation */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.bg-animation {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #667eea, #764ba2, #6b8cff, #8e44ad);
+    animation: gradientMove 10s infinite linear;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-25%, -25%); }
+    100% { transform: translate(0,0); }
+}
+
+/* Glass container */
+.container {
+    width: 40%;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    color: white;
+    animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Form grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Inputs */
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Glow effect */
+input:focus, select:focus {
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* Button hover animation */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff7e5f;
+}
+
+/* Loader animation */
+.loader {
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Result animation */
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

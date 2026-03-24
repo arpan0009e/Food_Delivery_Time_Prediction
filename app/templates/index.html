@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Delivery Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<div class="container">
+    <h1>🚀 Food Delivery Predictor</h1>
+    <p class="subtitle">Smart AI-based delivery time estimation</p>
+
+    <form action="/predict" method="post" class="form" onsubmit="showLoader()">
+
+        <div class="grid">
+            <input type="number" name="distance" placeholder="Distance (km)" required>
+            <input type="number" name="prep_time" placeholder="Preparation Time" required>
+            <input type="number" name="experience" placeholder="Courier Experience" required>
+
+            <select name="weather">
+                <option disabled selected>Weather</option>
+                <option>Clear</option>
+                <option>Rainy</option>
+                <option>Foggy</option>
+                <option>Windy</option>
+                <option>Snowy</option>
+            </select>
+
+            <select name="traffic">
+                <option disabled selected>Traffic</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+
+            <select name="vehicle">
+                <option disabled selected>Vehicle</option>
+                <option>Bike</option>
+                <option>Scooter</option>
+                <option>Car</option>
+            </select>
+
+            <select name="time_of_day">
+                <option disabled selected>Time</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Night</option>
+            </select>
+        </div>
+
+        <button type="submit">Predict 🚀</button>
+    </form>
+
+    <!-- Loader -->
+    <div id="loader" class="loader hidden"></div>
+
+    {% if prediction_text %}
+        <div class="result fade-in">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+function showLoader() {
+    document.getElementById("loader").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
