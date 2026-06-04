@@ -74,7 +74,7 @@ The dataset consists of historical food delivery records, which may include:
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/food-delivery-time-prediction.git
+git clone https://github.com/arpan0009e/food-delivery-time-prediction.git
 cd food-delivery-time-prediction
 pip install -r requirements.txt
 ```
